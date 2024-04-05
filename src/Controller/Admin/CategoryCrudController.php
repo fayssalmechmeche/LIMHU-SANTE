@@ -21,7 +21,7 @@ class CategoryCrudController extends AbstractCrudController
     {
         return [
             TextField::new('name'),
-            SlugField::new('slug')->setTargetFieldName('name')->setDisabled(true),
+            SlugField::new('slug')->setTargetFieldName('name')->setUnlockConfirmationMessage("C'est mieux de le laisser automatique mais tu peux le changer si tu veux"),
         ];
     }
 }

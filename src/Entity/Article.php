@@ -20,7 +20,7 @@ class Article
     #[ORM\Column(length: 255)]
     private ?string $slug = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $images = null;
 
     #[ORM\Column(length: 255, nullable: true)]
