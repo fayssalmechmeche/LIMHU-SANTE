@@ -26,6 +26,7 @@
 
 public/assets/uploads/*
 migration/*
+migrations/*
 
 ###> liip/imagine-bundle ###
 /public/media/cache/
