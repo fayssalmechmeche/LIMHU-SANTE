@@ -3,15 +3,11 @@
 namespace App\Event\Listener;
 
 use App\Entity\Category;
-use App\Entity\ProductVariant;
 use App\Repository\ArticleRepository;
-use App\Repository\BlogPostRepository;
 use App\Repository\CategoryRepository;
-use App\Repository\ProductVariantRepository;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Presta\SitemapBundle\Event\SitemapPopulateEvent;
-use Presta\SitemapBundle\Service\UrlContainerInterface;
 use Presta\SitemapBundle\Sitemap\Url\UrlConcrete;
 
 class SitemapSubscriber implements EventSubscriberInterface
