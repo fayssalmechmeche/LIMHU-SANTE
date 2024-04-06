@@ -19,7 +19,7 @@ class BlogController extends AbstractController
         ]);
     }
 
-    #[Route('/fr/{slug}', name: 'app_category', requirements: ['slug' => '[a-z0-9-]+'], options: ['sitemap' => ['priority' => 0.5]])]
+    #[Route('/fr/{slug}', name: 'app_category')]
     public function category(string $slug, CategoryRepository $categoryRepository): Response
     {
         return $this->render('blog/category.html.twig', [
@@ -29,7 +29,7 @@ class BlogController extends AbstractController
     }
 
 
-    #[Route('/fr/{category}/{slug}', name: 'app_article', requirements: ['slug' => '[a-z0-9-]+'], options: ['sitemap' => ['priority' => 0.5]])]
+    #[Route('/fr/{category}/{slug}', name: 'app_article')]
     public function show(string $slug, string $category, ArticleRepository $articleRepository, CategoryRepository $categoryRepository): Response
     {
         $category = $categoryRepository->findOneBy(['slug' => $category]);
