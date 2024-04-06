@@ -1,0 +1,17 @@
+{
+  "sqltools.connections": [
+    {
+      "mysqlOptions": {
+        "authProtocol": "default",
+        "enableSsl": "Disabled"
+      },
+      "previewLimit": 50,
+      "server": "f80b6byii2vwv8cx.chr7pe7iynqr.eu-west-1.rds.amazonaws.com",
+      "port": 3306,
+      "driver": "MariaDB",
+      "name": "limhu",
+      "username": "c41nx9us2cyb1rky",
+      "database": "hj0xnrb8biyordau"
+    }
+  ]
+}
