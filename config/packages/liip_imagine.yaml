@@ -2,6 +2,13 @@
 
 liip_imagine:
     driver: "gd"
+    resolvers:
+
+        # setup the default resolver
+        default:
+
+            # use the default web path
+            web_path: ~
     filter_sets:
 
         # name our filter set "my_thumb_filter"
