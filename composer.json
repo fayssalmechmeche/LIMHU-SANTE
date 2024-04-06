@@ -7,6 +7,9 @@
     "php": ">=8.1",
     "ext-ctype": "*",
     "ext-iconv": "*",
+    "ext-gd": "*",
+    "ext-intl": "*",
+    "gd": "*",
     "doctrine/dbal": "^3",
     "doctrine/doctrine-bundle": "^2.12",
     "doctrine/doctrine-migrations-bundle": "^3.3",
@@ -49,9 +52,7 @@
     "symfony/webpack-encore-bundle": "^2.1",
     "symfony/yaml": "6.4.*",
     "twig/extra-bundle": "^2.12|^3.0",
-    "twig/twig": "^2.12|^3.0",
-    "ext-gd": "*",
-    "ext-intl": "*"
+    "twig/twig": "^2.12|^3.0"
   },
   "config": {
     "allow-plugins": {
