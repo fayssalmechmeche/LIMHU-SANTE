@@ -2,9 +2,10 @@
 
 namespace App\Entity;
 
-use App\Repository\ArticleRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ArticleRepository;
+
 
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
 class Article
@@ -32,6 +33,9 @@ class Article
     #[ORM\ManyToOne(inversedBy: 'articles')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Category $category = null;
+
+    #[ORM\Column()]
+    private ?\DateTime $createAt = null;
 
     public function getId(): ?int
     {
@@ -106,6 +110,18 @@ class Article
     public function setCategory(?Category $category): static
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function getCreateAt(): ?\DateTime
+    {
+        return $this->createAt;
+    }
+
+    public function setCreateAt(\DateTime $createAt): static
+    {
+        $this->createAt = $createAt;
 
         return $this;
     }

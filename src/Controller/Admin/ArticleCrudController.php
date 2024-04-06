@@ -6,11 +6,12 @@ use App\Entity\Article;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-
+use Symfony\Component\Validator\Constraints\Date;
 
 class ArticleCrudController extends AbstractCrudController
 {
@@ -29,6 +30,7 @@ class ArticleCrudController extends AbstractCrudController
             TextField::new('subTitle')->setHelp('Pas obligatoire (sous-titre)'),
             ImageField::new('images')->setUploadDir('public/uploads/images/')->setBasePath('uploads/images/'),
             TextEditorField::new('content'),
+            DateField::new('createAt')->setFormat('dd-MM-yyyy'),
 
         ];
     }

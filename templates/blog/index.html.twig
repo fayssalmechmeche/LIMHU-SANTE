@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articles récents - Blog de Limhu
+{% endblock %}
+
+{% block description %}
+	Découvrez les articles récents du Blog de Limhu. Explorez une variété de sujets passionnants couvrant la santé, le bien-être et bien plus encore. Restez informé avec les dernières nouvelles et conseils pour une vie saine et équilibrée.
+{% endblock %}
+
+{% block keywords %}
+	Articles santé, conseils bien-être, astuces santé naturelle, informations nutritionnelles, remèdes naturels, style de vie sain, gestion du poids, exercices physiques, méditation et relaxation, développement personnel
+{% endblock %}
+
+
+{% block body %}
+	<div class="container">
+		<h1>Articles récents</h1>
+		<div class="articles">
+			{% for article in articles %}
+				<article>
+					<h2>{{ article.title }}</h2>
+					<h3>{{article.subTitle}}</h3>
+					<small>{{ article.createAt|date('d/m/Y') }}</small>
+					<p>{{ article.content|striptags|raw|slice(0, 200) }}</p>
+					<a href="{{ path('app_article', {'category': article.category.id, 'slug': article.slug}) }}" class="read-more">Lire la suite</a>
+				</article>
+			{% endfor %}
+		</div>
+
+		<aside>
+			<h2>Catégories</h2>
+			<ul class="categories">
+				{% for category in categories %}
+					<li style="padding-top:30px;padding-bot:30px">
+						<a href="{{ path('app_category', {'slug': category.slug}) }}">{{ category.name }}</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</aside>
+	</div>
+{% endblock %}

@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
+
+
+		{% set title = block('title') %}
+		{% set description = block('description') %}
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="Symfony 6 with Webpack Encore">
-		<meta name="author" content="Symfony 6 with Webpack Encore">
-		<meta name="generator" content="Symfony 6 with Webpack Encore">
-		<meta name="robots" content="noindex, nofollow">
-		<meta name="googlebot" content="noindex, nofollow">
-		<meta name="bingbot" content="noindex, nofollow">
+		<meta name="description" content="Hack SEO by Fayssal et Frederic {% block description %}{% endblock %}">
+		<meta name="author" content="Limhu">
+		<meta name="generator" content="Symfony">
+		<meta name="robots" content="index, follow">
+		<meta name="keywords" content="{% block keywords %}{% endblock %}">
 		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta
-		name="theme-color" content="#000000">
-		<!-- Chrome, Firefox OS and Opera -->
+		<meta name="theme-color" content="#000000">
+
+		<meta property="og:type" content="website"/>
+		<meta property="og:title" content="{{title}}"/>
+		<meta property="og:description" content="{{description}}"/>
+		<meta property="og:image" content="https://localhost:8000/images/300.webp"/>
+
+		<meta name="twitter:card" content="summary_large_image"/>
+		<meta name="twitter:title" content="{{title}}"/>
+		<meta name="twitter:description" content="{{description}}"/>
 
 		<title>
-			{% block title %}Welcome!
-			{% endblock %}
+			{% block title %}{% endblock %}
 		</title>
 		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
 		{% block stylesheets %}
@@ -31,13 +40,27 @@
 		{% endblock %}
 	</head>
 	<body>
-		{% block body %}
-			<main>
-				{% block content %}{% endblock %}
-				<h1>
-					Limhu
-				</h1>
-			</main>
-		{% endblock %}
+		<header>
+			<nav>
+				<div class="container">
+					<a href="{{ path('app_homepage') }}" class="logo">Limhu</a>
+					<ul class="menu">
+						<li>
+							<a href="{{ path('app_homepage') }}">Accueil</a>
+						</li>
+						<li>
+							<a href="{{ path('app_about') }}">À propos</a>
+						</li>
+						<li>
+							<a href="{{ path('app_blog') }}">Blog</a>
+						</li>
+						<li>
+							<a href="{{ path('app_contact') }}">Contact</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		{% block body %}{% endblock %}
 	</body>
 </html>

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{category.name}}
+	- Limhu
+{% endblock %}
+
+{% block description %}
+	Découvrez les articles de la catégorie
+	{{category.name}}
+	sur Limhu.
+{% endblock %}
+
+{% block keywords %}
+	articles santé, Limhu, bien-être, conseils santé, articles récents,
+	{{category.name}}
+{% endblock %}
+{% block body %}
+	<section id="articles" class="articles">
+		<div class="container">
+			<h1>Articles -
+				{{category.name}}</h1>
+			{% for article in articles %}
+				<div class="article">
+					<h2>{{article.title}}</h2>
+					<h3>{{article.subTitle}}</h3>
+					<small>{{ article.createAt|date('d/m/Y') }}</small>
+					<p>{{ article.content|striptags|raw|slice(0, 200) }}</p>
+					<a href="{{ path('app_article', {'category': article.category.slug, 'slug': article.slug}) }}" class="read-more">Lire la suite</a>
+				</div>
+			{% endfor %}
+
+			<!-- Ajoutez d'autres articles de la catégorie Santé ici -->
+		</div>
+	</section>
+
+{% endblock %}

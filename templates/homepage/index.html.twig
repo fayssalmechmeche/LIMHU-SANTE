@@ -1,8 +1,73 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomepageController!
+{% block title %}Accueil - Limhu Santé
+{% endblock %}
+
+{% block description %}Découvrez les produits naturels Limhu pour une santé optimale.
+{% endblock %}
+
+{% block keywords %}
+	Limhu, bien-être, santé naturelle, produits naturels, équilibre de vie, vitalité, conseils santé, témoignages, blog santé, contact Limhu
 {% endblock %}
 
 {% block body %}
-	<h1>Limhu</h1>
+	<section id="hero" class="hero">
+		<div class="container">
+			<h1>Bienvenue chez Limhu</h1>
+			<p>Découvrez notre gamme de produits naturels pour une santé optimale.</p>
+			<a href="#produits" class="btn">Découvrir</a>
+		</div>
+	</section>
+
+	<section id="produits" class="produits">
+		<div class="container">
+			<h2>Nos Produits</h2>
+			<div class="product">
+				<img src="{{ asset('images/300.webp'| imagine_filter('300x450')) }}" alt="Limhu Produit" size="50vw">
+				<h3>Produit 1</h3>
+				<p>Description du produit 1.</p>
+			</div>
+			<div class="product">
+				<img src="{{ asset('images/300.webp'| imagine_filter('300x450')) }}" alt="Limhu Santé" size="50vw">
+				<h3>Produit 2</h3>
+				<p>Description du produit 2.</p>
+			</div>
+			<!-- Ajoutez d'autres produits ici -->
+		</div>
+	</section>
+
+	<section id="temoignages" class="temoignages">
+		<div class="container">
+			<h2>Témoignages</h2>
+			<div class="testimonial">
+				<p>
+					"Depuis que j'ai découvert Limhu Santé, ma vie a pris un tournant incroyable. Après des années de lutte contre divers problèmes de santé, j'ai enfin trouvé une solution naturelle qui fonctionne vraiment. Les produits de Limhu Santé m'ont permis de retrouver une énergie que je pensais perdue, de renforcer mon système immunitaire et de mieux gérer le stress quotidien. Grâce à leur approche holistique de la santé, je me sens enfin équilibré et plein de vitalité. Je recommande vivement Limhu Santé à tous ceux qui recherchent une véritable transformation de leur bien-être." Ce témoignage met en avant l'expérience positive d'un utilisateur des produits Limhu Santé, mettant en valeur les avantages pour la santé, la solution naturelle et l'approche holistique de la marque. Il contribuera à renforcer le référencement de Limhu dans le domaine de la santé en soulignant les bénéfices et l'efficacité des produits.
+				</p>
+				<span>Frederic</span>
+			</div>
+			<div class="testimonial">
+				<p>"Je suis étonné par les résultats que j'ai obtenus avec Limhu Santé. Après avoir essayé de nombreuses options pour améliorer ma santé, je me suis tourné vers Limhu par curiosité. Et je suis ravi de l'avoir fait ! Les produits de Limhu ont dépassé toutes mes attentes. Non seulement j'ai remarqué une amélioration significative de mon bien-être général, mais j'ai également constaté une augmentation de ma vitalité et une réduction de mes douleurs chroniques. En adoptant un mode de vie plus sain avec l'aide de Limhu, je me sens plus fort et plus épanoui chaque jour. Merci, Limhu, pour avoir changé ma vie de façon si positive !". Ce témoignage met en avant l'expérience positive d'un utilisateur qui a constaté une amélioration significative de sa santé grâce aux produits de Limhu. Il renforce la crédibilité de la marque en soulignant les résultats tangibles obtenus par les utilisateurs, ce qui contribuera à améliorer le référencement de Limhu dans le domaine de la santé.</p>
+				<span>Pierre</span>
+			</div>
+			<!-- Ajoutez d'autres témoignages ici -->
+		</div>
+	</section>
+
+	<section id="blog" class="blog">
+		<div class="container">
+			<h2>Derniers Articles</h2>
+			{% for article in articles %}
+
+
+				<div class="article">
+					<h3>{{article.title}}</h3>
+					<h3>{{article.subTitle}}</h3>
+					<small>{{ article.createAt|date('d/m/Y') }}</small>
+					<p>{{article.content|striptags|raw}}</p>
+					<a href="{{ path('app_article', {'category': article.category.id, 'slug': article.slug}) }}" class="btn">Lire la suite</a>
+				</div>
+			{% endfor %}
+			<!-- Ajoutez d'autres articles ici -->
+		</div>
+	</section>
 {% endblock %}

@@ -1,3 +1,71 @@
+/* Réutilisation de styles précédents */
 body {
-    background-color: white;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Styles pour la navbar */
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu li {
+    margin-left: 20px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu li a:hover {
+    color: #ffd700;
+}
+
+/* Styles pour la section "À propos" */
+.about-section {
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.about-section h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about-section p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+/* Styles pour le footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: #fff;
 }
