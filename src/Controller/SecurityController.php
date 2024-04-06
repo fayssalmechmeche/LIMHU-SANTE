@@ -9,7 +9,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends AbstractController
 {
-    #[Route(path: '/connexion', name: 'app_login')]
+    #[Route(path: '/connexion', name: 'app_login', methods: ['GET', 'POST'], options: ['sitemap' => ['priority' => 0.1], 'i18n' => ['fr' => '/fr/connexion', 'en' => '/en/login']])]
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         // if ($this->getUser()) {

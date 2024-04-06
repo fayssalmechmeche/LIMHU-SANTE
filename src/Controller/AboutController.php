@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class AboutController extends AbstractController
 {
-    #[Route('/a-propos', name: 'app_about')]
+    #[Route('/a-propos', name: 'app_about', methods: ['GET'], options: ['sitemap' => ['priority' => 0.5], 'i18n' => ['fr' => '/fr/a-propos', 'en' => '/en/about']])]
     public function index(
         ArticleRepository $articleRepository,
         CategoryRepository $categoryRepository
