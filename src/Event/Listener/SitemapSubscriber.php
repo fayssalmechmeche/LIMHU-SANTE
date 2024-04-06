@@ -40,7 +40,7 @@ class SitemapSubscriber implements EventSubscriberInterface
 
         foreach ($categorys as $category) {
             $url = new UrlConcrete(
-                $urlGenerator->generate('product_show', [
+                $urlGenerator->generate('app_category', [
                     'slug' => $category->getSlug(),
                 ], UrlGeneratorInterface::ABSOLUTE_URL),
             );
@@ -52,8 +52,8 @@ class SitemapSubscriber implements EventSubscriberInterface
 
         foreach ($articles as $article) {
             $url = new UrlConcrete(
-                $urlGenerator->generate('article_show', [
-                    'slug' => $article->getSlug(),
+                $urlGenerator->generate('app_article', [
+                    'slug' => $article->getSlug(), 'category' => $article->getCategory()->getSlug(),
                 ], UrlGeneratorInterface::ABSOLUTE_URL),
             );
 
