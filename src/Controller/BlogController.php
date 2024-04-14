@@ -33,6 +33,10 @@ class BlogController extends AbstractController
     public function show(string $slug, string $category, ArticleRepository $articleRepository, CategoryRepository $categoryRepository): Response
     {
         $category = $categoryRepository->findOneBy(['slug' => $category]);
+        if (!$category) {
+            throw $this->createNotFoundException('La catégorie n\'existe pas');
+        }
+
         return $this->render('blog/article.html.twig', [
             'article' => $articleRepository->findOneBy(['slug' => $slug, 'category' => $category]),
             'articles' => $articleRepository->findBy([], ['createAt' => 'DESC'], 3),
