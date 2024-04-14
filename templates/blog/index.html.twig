@@ -22,7 +22,7 @@
 					<h3>{{article.subTitle}}</h3>
 					<small>{{ article.createAt|date('d/m/Y') }}</small>
 					<p>{{ article.content|striptags|raw|slice(0, 200) }}</p>
-					<a href="{{ path('app_article', {'category': article.category.id, 'slug': article.slug}) }}" class="read-more">Lire la suite</a>
+					<a href="{{ path('app_article', {'category': article.category.slug, 'slug': article.slug}) }}" class="read-more">Lire la suite</a>
 				</article>
 			{% endfor %}
 		</div>
