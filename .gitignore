@@ -25,6 +25,9 @@
 ###< symfony/asset-mapper ###
 
 public/uploads/*
+!public/uploads/images/
+!public/uploads/images/300.jpg
+!public/uploads/images/300.webp
 migration/*
 migrations/*
 ###> symfony/webpack-encore-bundle ###
