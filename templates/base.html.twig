@@ -7,34 +7,34 @@
 		{% set description = block('description') %}
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="Hack SEO by Fayssal et Frederic {% block description %}{% endblock %}">
+		<meta name="description" content="{% block description %}{% endblock %}">
 		<meta name="author" content="Limhu">
-		<meta name="generator" content="Symfony">
+		<meta name="generator" content="Limhu">
 		<meta name="robots" content="index, follow">
 		<meta name="keywords" content="{% block keywords %}{% endblock %}">
 		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="theme-color" content="#000000">
+		<meta name="theme-color" content="#4285f4"> 
 
 		<meta property="og:type" content="website"/>
 		<meta property="og:title" content="{{title}}"/>
 		<meta property="og:description" content="{{description}}"/>
-		<meta property="og:image" content="https://localhost:8000/images/300.webp"/>
+		<meta property="og:image" content="https://www.limhu-sante.fr/images/300.webp"/>
+		<meta property="og:url" content="https://www.limhu-sante.fr"/>
 
 		<meta name="twitter:card" content="summary_large_image"/>
 		<meta name="twitter:title" content="{{title}}"/>
 		<meta name="twitter:description" content="{{description}}"/>
 
-		<title>
-			{% block title %}{% endblock %}
-		</title>
-		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+		<title>{% block title %}{% endblock %}</title>
+		<link rel="icon" href="{{ asset('/images/ico.ico') }}" type="image/x-icon">
+		<link rel="manifest" href="{{ asset('manifest.webmanifest') }}">
+
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
 		{% endblock %}
 
 		{% block javascripts %}
 			{{ encore_entry_script_tags('app') }}
-
 		{% endblock %}
 	</head>
 	<body>

@@ -1,0 +1,24 @@
+{
+  "name": "Limhu Santé",
+  "short_name": "Limhu",
+  "description": "Découvrez les produits naturels Limhu pour une santé optimale.",
+  "start_url": "/",
+  "Scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/images/300.webp",
+      "sizes": "300x300",
+      "type": "image/webp",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/images/512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
