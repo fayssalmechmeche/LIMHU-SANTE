@@ -1,14 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil - Limhu Santé
-{% endblock %}
+{% block title %}Accueil - Limhu Santé | Produits Naturels pour une Santé Optimale{% endblock %}
 
-{% block description %}Découvrez les produits naturels Limhu pour une santé optimale.
-{% endblock %}
+{% block description %}Découvrez les produits naturels Limhu pour une santé optimale. Conseils santé, témoignages et bien plus encore.{% endblock %}
 
-{% block keywords %}
-	Limhu, bien-être, santé naturelle, produits naturels, équilibre de vie, vitalité, conseils santé, témoignages, blog santé, contact Limhu
-{% endblock %}
+{% block keywords %}Limhu, bien-être, santé naturelle, produits naturels, équilibre de vie, vitalité, conseils santé, témoignages, blog santé, contact Limhu{% endblock %}
 
 {% block body %}
 	<section id="hero" class="hero">
@@ -21,7 +17,7 @@
 
 	<section id="produits" class="produits">
 		<div class="container">
-			<h2>Nos Produits</h2>
+			<h2>Nos Produits de Limhu</h2>
 			<div class="product">
 				<img src="https://www.limhu-sante.fr/media/cache/300x450/images/300.webp" alt="Limhu Produit" size="50vw">
 				<h3>Produit 1</h3>
@@ -38,7 +34,7 @@
 
 	<section id="temoignages" class="temoignages">
 		<div class="container">
-			<h2>Témoignages</h2>
+			<h2>Témoignages des utilisateurs de Limhu</h2>
 			<div class="testimonial">
 				<p>
 					"Depuis que j'ai découvert Limhu Santé, ma vie a pris un tournant incroyable. Après des années de lutte contre divers problèmes de santé, j'ai enfin trouvé une solution naturelle qui fonctionne vraiment. Les produits de Limhu Santé m'ont permis de retrouver une énergie que je pensais perdue, de renforcer mon système immunitaire et de mieux gérer le stress quotidien. Grâce à leur approche holistique de la santé, je me sens enfin équilibré et plein de vitalité. Je recommande vivement Limhu Santé à tous ceux qui recherchent une véritable transformation de leur bien-être." Ce témoignage met en avant l'expérience positive d'un utilisateur des produits Limhu Santé, mettant en valeur les avantages pour la santé, la solution naturelle et l'approche holistique de la marque. Il contribuera à renforcer le référencement de Limhu dans le domaine de la santé en soulignant les bénéfices et l'efficacité des produits.
@@ -55,7 +51,7 @@
 
 	<section id="blog" class="blog">
 		<div class="container">
-			<h2>Derniers Articles</h2>
+			<h2>Derniers Articles de Limhu</h2>
 			{% for article in articles %}
 
 
@@ -67,7 +63,7 @@
 					<a href="{{ path('app_article', {'category': article.category.slug, 'slug': article.slug}) }}" class="btn">Lire la suite</a>
 				</div>
 			{% endfor %}
-			<!-- Ajoutez d'autres articles ici -->
+			
 		</div>
 	</section>
 {% endblock %}

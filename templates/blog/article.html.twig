@@ -1,29 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}
-	{{ article.title }}
-	Lihmu
-{% endblock %}
+{% block title %}{{ article.title }} par Lihmu{% endblock %}
 
-{% block description %}
-	{{ article.content|striptags|slice(0, 150) }}
-{% endblock %}
+{% block description %}{{ article.content|striptags|slice(0, 150) }}{% endblock %}
 
-{% block keywords %}
-	{{article.title}}, Limhu, santé naturelle, bien-être,
-	{{ article.category.name }}
-{% endblock %}
+{% block keywords %}{{article.title}}, Limhu, santé naturelle, bien-être,{{ article.category.name }}{% endblock %}
 
 {% block body %}
 	<section id="article" class="article">
 		<div class="container">
-			<h1>{{ article.title }}</h1>
-			<p class="metadata">Publié le
-				{{ article.createAt|date('d/m/Y') }}
-				par Limhu</p>
+			<h1>{{ article.title }} par Limhu</h1>
+			<p class="metadata">Publié le {{ article.createAt|date('d/m/Y') }}</p>
 			<div class="content">
 				<p>{{ article.content|striptags|raw }}</p>
-				<!-- Ajoutez le contenu de votre article ici -->
 			</div>
 		</div>
 	</section>

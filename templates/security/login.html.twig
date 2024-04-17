@@ -1,6 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Connexion chez Limhu{% endblock %}
+
+{% block description %}Connectez-vous pour accéder à votre compte Limhu.{% endblock %}
+
+{% block keywords %}Limhu, connexion, compte Limhu, connexion utilisateur, connexion membre, connexion client, connexion administrateur{% endblock %}
 
 {% block body %}
 <form method="post">
@@ -10,22 +14,21 @@
 
     {% if app.user %}
         <div class="mb-3">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+            Bonjour {{ app.user.userIdentifier }}, vous êtes connecté en tant que membre de la communauté Limhu. <a href="{{ path('app_logout') }}">Déconnexion</a>
         </div>
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
+    <h1 class="h3 mb-3 font-weight-normal">Connectez-vous à votre compte Limhu</h1>
+    <label for="inputEmail">Adresse email</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Password</label>
+    <label for="inputPassword">Mot de passe</label>
     <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
     <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
+        Se connecter
     </button>
 </form>
 {% endblock %}
+
