@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class HomepageController extends AbstractController
 {
-    #[Route('/', name: 'app_homepage', methods: ['GET'], options: ['sitemap' => ['priority' => 0.5]])]
+    #[Route('/', name: 'app_homepage', methods: ['GET'], options: ['sitemap' => ['priority' => 1]])]
     public function index(ArticleRepository $articleRepository): Response
     {
         return $this->render('homepage/index.html.twig', [

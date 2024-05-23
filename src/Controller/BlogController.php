@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class BlogController extends AbstractController
 {
-    #[Route('/fr/blog', name: 'app_blog', methods: ['GET'], options: ['sitemap' => ['priority' => 0.5]])]
+    #[Route('/fr/blog', name: 'app_blog', methods: ['GET'], options: ['sitemap' => ['priority' => 1]])]
     public function index(ArticleRepository $articleRepository, CategoryRepository $categoryRepository): Response
     {
         return $this->render('blog/index.html.twig', [
