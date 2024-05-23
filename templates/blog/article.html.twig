@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ article.title }} par Lihmu{% endblock %}
+{% block title %}{{ article.title }}{% endblock %}
 
 {% block description %}{{ article.content|striptags|slice(0, 150) }}{% endblock %}
 
@@ -8,12 +8,12 @@
 
 {% block body %}
 	<section id="article" class="article">
-		<div class="container">
-			<h1>{{ article.title }} par Limhu</h1>
+		<article class="container">
+			<h1>{{ article.title }}</h1>
 			<p class="metadata">Publié le {{ article.createAt|date('d/m/Y') }}</p>
-			<div class="content">
+			<main class="content">
 				<p>{{ article.content|striptags|raw }}</p>
-			</div>
-		</div>
+			</main>
+		</article>
 	</section>
 {% endblock %}

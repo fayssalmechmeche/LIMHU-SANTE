@@ -1,35 +1,36 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Contactez-nous chez Limhu{% endblock %}
+{% block title %}Contactez-nous chez Limhu - Service Clientèle et Assistance{% endblock %}
 
-{% block description %}Contactez-nous pour toute question ou demande d'information sur Limhu.{% endblock %}
+{% block description %}Besoin d'aide ou d'informations sur Limhu ? Contactez notre service clientèle pour toute question ou demande d'assistance.{% endblock %}
 
-{% block keywords %}Limhu, Contact Limhu, demande d'information, assistance clientèle, service client Limhu, contactez-nous, formulaire de contact, informations de contact, support Limhu, assistance technique, questions fréquentes{% endblock %}
+{% block keywords %}Limhu, Contact Limhu, service clientèle, assistance, formulaire de contact, informations de contact, support, questions fréquentes, assistance technique{% endblock %}
 
 {% block body %}
-	<section id="contact" class="contact">
-		<div class="container">
-			<h1>Contactez-nous chez Limhu</h1>
-			<div class="contact-info">
-				<p>Adresse : 123 Rue Limhu, Paris, France</p>
-				<p>Email : contact@limhu.com</p>
-				<p>Téléphone : 07 12 34 54 35</p>
-			</div>
-			<form action="#" method="post" style="gap: 10%; display:flex;">
-				<div class="form-group" style="gap: 10%;">
-					<label for="name" style="gap: 10%;">Nom</label>
-					<input type="text" id="name" name="name" required style="gap: 10%;">
-				</div>
-				<div class="form-group" style="gap: 10%;">
-					<label for="email" style="gap: 10%;">Email</label>
-					<input type="email" id="email" name="email" required style="gap: 10%;">
-				</div>
-				<div class="form-group" style="gap: 10%;">
-					<label for="message" style="gap: 10%;">Message</label>
-					<textarea id="message" name="message" rows="5" required style="gap: 10%;"></textarea>
-				</div>
-				<button type="submit" class="btn" style="gap: 10%;">Envoyer</button>
-			</form>
-		</div>
-	</section>
+    <section id="contact" class="contact">
+        <div class="container">
+            <h1>Contactez-nous chez Limhu</h1>
+            <div class="contact-info">
+                <p>Adresse : 123 Rue Limhu, Paris, France</p>
+                <p>Email : contact@limhu.com</p>
+                <p>Téléphone : 07 12 34 54 35</p>
+            </div>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Envoyer</button>
+            </form>
+        </div>
+    </section>
 {% endblock %}
+

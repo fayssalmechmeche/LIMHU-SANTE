@@ -1,14 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{category.name}} de Limhu{% endblock %}
+{% block title %}Articles sur {{ category.name }} - Limhu Santé et Bien-être{% endblock %}
 
-{% block description %}Découvrez les articles de la catégorie {{category.name}} sur Limhu.{% endblock %}
 
-{% block keywords %}articles santé, Limhu, bien-être, conseils santé, articles récents,{{category.name}}{% endblock %}
+{% block description %}Découvrez les articles de la catégorie {{ category.name }} sur Limhu. Explorez des conseils santé, des astuces bien-être et des informations précieuses pour une vie saine et équilibrée.{% endblock %}
+
+{% block keywords %}articles santé, Limhu, bien-être, conseils santé, articles récents, {{ category.name }}, santé naturelle, mode de vie sain, nutrition, remise en forme{% endblock %}
 {% block body %}
 	<section id="articles" class="articles">
 		<div class="container">
-			<h1>Articles de limhu- {{category.name}} </h1>
+			<h1>Articles de Limhu - {{ category.name }}</h1>
 			{% for article in articles %}
 				<div class="article">
 					<h2>{{article.title}} par Limhu</h2>
