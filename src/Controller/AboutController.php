@@ -16,7 +16,7 @@ class AboutController extends AbstractController
         CategoryRepository $categoryRepository
     ): Response {
         return $this->render('about/index.html.twig', [
-            'articles' => $articleRepository->findAll(),
+            'articles' => $articleRepository->findBy([], ['createAt' => 'DESC'], 3),
             'categories' => $categoryRepository->findAll(),
         ]);
     }
